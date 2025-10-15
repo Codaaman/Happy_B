@@ -1,0 +1,313 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to top, #ff9a9e, #fad0c4);
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+#gameArea {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  border: 4px solid white;
+  display: none; /* hidden until game starts */
+}
+
+#basket {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 100px;
+  transform: translateX(-50%);
+}
+
+.heart {
+  position: absolute;
+  width: 90px;
+  animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+  0% { top: -40px; }
+  100% { top: 100%; }
+}
+
+#winMessage {
+  display: none;
+  margin-top: 30px;
+  animation: fadeIn 2s ease forwards;
+}
+
+#winMessage img {
+  width: 200px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px white;
+}
+
+#winMessage p {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: white;
+  max-width: 600px;
+  margin: auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 🌟 Splash Screen Styles */
+#splashScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #ff758c, #ff7eb3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#splashScreen h1 {
+  margin-bottom: 30px;
+  animation: popIn 1s ease-in-out;
+}
+
+#startBtn {
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  background: white;
+  color: #ff4e7a;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#startBtn:hover {
+  background: #ffe3ec;
+  transform: scale(1.05);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+
+#main_box{
+    width: 800px;
+    height: 200px;
+    transform: scale(0.3);
+    animation: scale 8s ease-in-out forwards;
+
+}
+
+svg path{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke:white;
+    stroke-width: 1.5;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: text 6s ease-in-out forwards;
+}
+@keyframes text{
+    0%{
+        stroke-dashoffset: 50;
+    }
+
+    80%{
+        fill:transparent;
+
+    }
+
+
+    100%{
+        fill:#ffffff;
+        stroke-dashoffset: 0;
+    }
+}
+
+
+
+
+#heart{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke: red;
+    stroke-width: 1.9;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: text2 6s ease-in-out forwards;
+}
+@keyframes text2{
+    0%{
+        stroke-dashoffset: 50;
+    }
+
+    80%{
+        fill:transparent;
+
+    }
+
+
+    100%{
+        fill:red;
+        stroke-dashoffset: 0;
+    }
+}
+
+
+@keyframes scale {
+
+    0%{
+        transform: scale(0.5);
+    }
+
+    50%{
+        transform: scale(0.6);
+    }
+    100%{
+        transform: scale(0.6);
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+#winMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 30px;
+  animation: fadeInBg 2s ease-in-out;
+}
+
+.win-content {
+  animation: popInWin 1.5s ease forwards;
+  opacity: 0;
+}
+
+#winMessage img {
+  width: 220px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 30px white;
+  margin-bottom: 20px;
+}
+
+#winMessage p {
+  font-size: 1.6rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px 25px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Pop and fade animations */
+@keyframes popInWin {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeInBg {
+  from { background-color: transparent; }
+  to { background-color: rgba(255, 192, 203, 0.1); }
+}
+
+
+
+#score-box{
+    width: 50px;
+    height: 25px;
+    border: 2px solid white;
+    
+}
+
+
+
+
+
+
+
+#winMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 30px;
+}
+
+.win-content {
+  opacity: 0;
+  animation: slideUpPop 1.2s ease forwards;
+  transform: translateY(100px) scale(0.8); /* Start state */
+}
+
+#winMessage img {
+  width: 220px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 30px white;
+  margin-bottom: 20px;
+}
+
+#winMessage p {
+  font-size: 1.6rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px 25px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* 🔥 Animation: slide up and pop */
+@keyframes slideUpPop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
